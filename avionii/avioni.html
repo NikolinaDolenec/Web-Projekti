@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Avioni</title>
+    <link rel="stylesheet" href="avioni.css">
+    <script src="avioni.js"></script>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f2f2f2;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        .slike {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .slike img {
+            width: 250px;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+
+        .rollover:hover {
+            transform: scale(1.1);
+            opacity: 0.7;
+            box-shadow: 0 0 15px #333;
+        }
+
+        #swapSlika {
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Moje tri slike aviona</h1>
+
+    <div class="slike">
+
+        <img class="rollover"
+             src="CroatiaPutnicki.jpg"
+             alt="Putnički avion">
+<br>
+        <img class="rollover"
+             src="ratni.jpg"
+             alt="ratni avion">
+<br>
+        <img id="swapSlika"
+             src="transporter.jpg"
+             alt="Avion transporter"
+             onclick="swapSlika()">
+
+    </div>
+
+    <script>
+        function swapSlika() {
+            let slika = document.getElementById("swapSlika");
+
+            if (slika.src.includes("transporter.jpg")) {
+                slika.src = "slika4.jpg";
+            } else {
+                slika.src = "slika3.jpg";
+            }
+        }
+    </script>
+
+</body>
+</html>
